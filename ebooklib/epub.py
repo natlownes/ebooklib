@@ -1283,7 +1283,8 @@ class EpubWriter(object):
                     section, subsection = item[0], item[1]
 
                     np = etree.SubElement(itm, 'navPoint', {
-                        'id': section.get_id() if isinstance(section, EpubHtml) else 'sep_%d' % uid
+                        'id': section.get_id() if isinstance(section, EpubHtml) else 'sep_%d' % uid,
+                        'class': 'chapter',
                     })
 
                     if self._play_order['enabled']:
